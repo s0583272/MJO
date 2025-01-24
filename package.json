@@ -12,7 +12,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node --env-file=.env ../MJO-Web/versuch/index.js",
-    "dev": "node --env-file=.env --watch ../MJO-Web/versuch/index.js"
+    "start": "node --env-file=.env versuch/index.js",
+    "dev": "node --env-file=.env --watch versuch/index.js"
   }
 }
