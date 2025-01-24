@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@libsql/client": "^0.14.0",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "method-override": "^3.0.0"
+  },
+  "name": "wt-ws24-webtech-team-do",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env ../MJO-Web/versuch/index.js",
+    "dev": "node --env-file=.env --watch ../MJO-Web/versuch/index.js"
+  }
+}
