@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Product</title>
+  <link rel="stylesheet" href="test2.css">
+  <!-- Font Awesome für das Home-Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<header>
+  <a href="/" class="startseite-icon">
+    <i class="fas fa-home"></i>
+  </a>
+  <h1>Create Product</h1>
+</header>
+
+<form action="/product" method="post">
+  <div class="form-group">
+    <label for="bezeichnung">Name:</label>
+    <input type="text" id="bezeichnung" name="bezeichnung" placeholder="Enter product name" required>
+  </div>
+  <div class="form-group">
+    <label for="preis">Price:</label>
+    <input type="number" id="preis" name="preis" placeholder="Enter product price" step="1" required>
+  </div>
+  <div class="form-group">
+    <label for="menge">Quantity:</label>
+    <input type="number" id="menge" name="menge" placeholder="Enter product quantity" required>
+  </div>
+  <div class="form-group">
+    <label for="bilder">Bild-URL:</label>
+    <input type="text" id="bilder" name="bilder" placeholder="Enter image URL">
+  </div>
+  <div class="form-group">
+    <label for="kategorie">Categories:</label>
+    <input type="text" id="kategorie" name="kategorie" placeholder="Enter product categories">
+  </div>
+  <div class="form-group">
+    <label for="beschreibung">Beschreibung:</label>
+    <input type="text" id="beschreibung" name="beschreibung" placeholder="Enter product description">
+  </div>
+  <button type="submit"class="styled-button">Create Product</button>
+</form>
+</body>
+</html>

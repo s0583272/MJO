@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="/test2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="startseite-icon">
+                    <i class="fas fa-home"></i>
+                </a>
+        <h1>Categories Overview</h1>
+    </header>
+
+    <div class="create-category-container">
+            <form action="/Create" method="get">
+                <button type="submit" class="styled-button">Create Category</button>
+            </form>
+    </div>
+    <h2>All Categories</h2>
+    <% if (kategorien && kategorien.length > 0) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category ID</th>
+                    <th>Category Name</th>
+                    <th>Anzahl der Spiele</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% kategorien.forEach((kategorie, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= kategorie %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No categories found.</p>
+    <% } %>
+
+</body>
+</html>

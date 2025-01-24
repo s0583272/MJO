@@ -1,0 +1,215 @@
+/* Impressum beginnt */
+
+/* Body-Styling: Setzt die Schriftart, Hintergrundfarbe, Textfarbe, entfernt Standardabstände,
+   aktiviert Flexbox, ordnet Elemente vertikal an, zentriert sie horizontal und vertikal,
+   und stellt sicher, dass die minimale Höhe des Body die Höhe des Viewports ist */
+/* Gehört zu Impressum.html */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('hintergrund.webp'); /* Use the correct background image */
+    background-size: cover; /* Bild deckt die gesamte Seite ab */
+    background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
+    background-position: center; /* Zentriert das Bild */
+    background-attachment: fixed; /* Fixiert das Bild beim Scrollen */
+    height: 100%;
+    font-family: 'Press Start 2P', sans-serif; /* Setzt die Schriftart für den gesamten Text */
+    color: #3399ff; /* Setzt die Textfarbe auf Gelb */
+    display: flex; /* Aktiviert Flexbox für das Layout */
+    flex-direction: column; /* Ordnet die Flexbox-Elemente vertikal an */
+    align-items: center; /* Zentriert die Flexbox-Elemente horizontal */
+    justify-content: flex-start; /* Zentriert die Flexbox-Elemente vertikal */
+    min-height: 100vh; /* Stellt sicher, dass die minimale Höhe des Body die Höhe des Viewports ist */
+}
+
+/* Header-Styling: Zentriert den Text, fügt einen unteren Außenabstand hinzu,
+   setzt die Breite auf 100%, aktiviert Flexbox, zentriert den Inhalt horizontal und vertikal,
+   und fügt Innenabstand hinzu */
+/* Gehört zu Impressum.html */
+header {
+    text-align: center; /* Zentriert den Text im Header */
+    margin-bottom: 20px; /* Fügt einen unteren Außenabstand von 20px hinzu */
+    display: flex;
+    justify-content: center; /* Zentriert den Inhalt horizontal */
+    align-items: center; /* Zentriert den Inhalt vertikal */
+    padding: 20px;
+    margin-top: 0; /* Entfernt den oberen Abstand zum vorherigen Element */
+}
+
+/* Hauptüberschrift-Styling: Setzt die Schriftart, Schriftgröße, Schriftgewicht,
+   Textausrichtung, Textfarbe, Hintergrundfarbe, Innenabstand, abgerundete Ecken,
+   Box-Sizing und oberen Außenabstand */
+/* Gehört zu Impressum.html */
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    color: #FFFFFF; /* Weißer Text für Kontrast */
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 100px; /* Fügt oben mehr Platz hinzu */
+    margin-bottom: 5px; /* Verkleinert den Abstand unterhalb der Überschrift */
+
+}
+
+h2{
+    color: #ffff99; /* Gelbe Textfarbe */
+}
+
+h3{
+    color: #ffffcc; /* Gelbe Textfarbe */
+}
+
+/* Abschnitt-Styling: Fügt oberen und unteren Außenabstand sowie Innenabstand hinzu */
+/* Gehört zu Impressum.html */
+section {
+    margin-top: 0; /* Entfernt den oberen Abstand zum vorherigen Element */
+    margin-bottom: 20px; /* Einheitlicher Abstand zwischen den Boxen */
+    padding: 20px;
+}
+
+/* Letzter Abschnitt-Styling: Entfernt unteren Außenabstand */
+/* Gehört zu Impressum.html */
+section:last-child {
+    margin-bottom: 0;
+}
+
+/* Absatz-Styling: Verkleinert die Schriftgröße der Absätze und die Farbe der Absätze */
+/* Gehört zu Impressum.html */
+/* hier sind die gleinen text boxen für den text im impressum also telefon, etc... */
+p {
+    font-size: 1rem; /* Verkleinert die Schriftgröße der Absätze */
+    color: #ffffff; /* Textfarbe für die ganzen Beschreibungen */
+    background-color: rgba(0, 0, 0, 0); /* Farbe der Textboxen */
+    border-radius: 4px;
+    margin-top: 0px; /* Verkleinert den Abstand zum vorherigen Element */
+}
+
+p1 {
+    padding: 10px 10px;
+    font-size: 1rem; /* Verkleinert die Schriftgröße der Absätze */
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    color: #FFFFFF; /* Weißer Text für Kontrast */
+    border-radius: 4px;
+    margin-top: 0px; /* Verkleinert den Abstand zum vorherigen Element */
+}
+
+/*background-color: #3399ff;*/
+/* Content-Container-Styling: Setzt halbtransparente Hintergrundfarbe,
+   Innenabstand, abgerundete Ecken, maximale Breite, zentriert den Container und
+   setzt die Textfarbe */
+/* Gehört zu Impressum.html */
+.content-container {
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    color: #FFFFFF; /* Weißer Text für Kontrast */
+    padding: 20px; /* Innenabstand */
+    border-radius: 10px; /* Abgerundete Ecken */
+    max-width: 80%; /* Maximale Breite */
+    margin: 5px auto 0 auto; /* Verkleinert den oberen Abstand und zentriert */
+    margin-bottom: 50px; /* Platz am Ende des Containers */
+}
+
+/* hier sind sachen für den unteren vermerk */
+main {
+    padding-bottom: 50px; /* Fügt unten Platz für den Vermerk hinzu */
+}
+
+/* Footer-Styling: Setzt die Schriftgröße, Textfarbe, Hintergrundfarbe, Innenabstand,
+   zentriert den Text horizontal und vertikal, und fügt einen oberen Außenabstand hinzu */
+.footer-note {
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.8rem;
+    padding: 10px;
+    border-radius: 15px; /* Abgerundete Ecken */
+}
+
+
+/* Zurück-Button (Position absolut) */
+.back-btn {
+    font-family: 'Press Start 2P', sans-serif;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #F6CEF5;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px; /* Abgerundete Ecken */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+
+}
+
+/* Dropdown-Container */
+.dropdown {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+
+/* Dropdown-Button-Styling */
+.dropbtn {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #F6CEF5;
+    color: black;
+    padding: 10px 20px; /* Größe buttens anpassen */
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px; /* Abgerundete Ecken */
+}
+
+/* Dropdown-Inhalt */
+/* Gehört zu allen Seiten */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #F6CEF5;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Stile für die Links im Dropdown */
+/* Gehört zu allen Seiten */
+.dropdown-content a {
+    color: black;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Hover-Effekt für Dropdown-Links */
+/* Gehört zu allen Seiten */
+.dropdown-content a:hover {
+    background-color: rgba(211, 211, 211, 0.8);
+}
+
+/* Dropdown sichtbar machen */
+/* Gehört zu allen Seiten */
+.show {
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+}
+
+

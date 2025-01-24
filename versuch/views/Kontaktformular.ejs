@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Gaming Shop</title>
+    <link rel="stylesheet" href="/Kontaktformular.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>MJO GAMESCOM</h1>
+</header>
+<div class="container">
+    <h2>Kontaktformular</h2>
+    <p>Bei Fragen oder Hilfe Füllen Sie Bitte das Formular aus,und unser Support-Team wird sich so schnell wie möglich bei ihnen melden!</p>
+
+    <form action="/submit-form" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Dein Name" required>
+
+        <label for="email">E-Mail-Adresse:</label>
+        <input type="email" id="email" name="email" placeholder="Deine E-Mail-Adresse" required>
+
+        <label for="subject">Betreff:</label>
+        <input type="text" id="subject" name="subject" placeholder="Betreff" required>
+
+        <label for="message">Nachricht:</label>
+        <textarea id="message" name="message" rows="6" placeholder="Deine Nachricht" required></textarea>
+
+        <label for="file">Datei hochladen (optional):</label>
+        <input type="file" id="file" name="file">
+
+        <div class="privacy">
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <label for="privacy">Ich akzeptiere die <a href="/privacy">Datenschutzrichtlinie</a>.</label>
+        </div>
+
+        <input type="submit" value="Absenden">
+        <button class="back-btn" onclick="goBack()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+        </button>
+
+    </form>
+    <footer class="footer">
+        <div class="footer-top">
+            <p class="service-hotline">
+                Unsere Service Hotline ist unter <strong>0421 999888</strong> Montag - Freitag 09:00 - 16:00 Uhr für Sie erreichbar.
+            </p>
+        </div>
+    </footer>
+</div>
+
+<script src="/Kontaktformular.js"></script>
+</body>
+</html>

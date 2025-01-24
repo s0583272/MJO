@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/uebersichtsseite.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+<!-- Header mit Navigation -->
+<header>
+    <div class="banner">
+        <h1>Willkommen bei MJO Games</h1>
+        <p>Die coolsten und neuen Spiele im Gaming Universum</p>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/onlineshop">Shop</a></li>
+            <li><a href="/warenkorb">Warenkorb</a></li>
+            <li><a href="/Kontaktformular">Kontaktformular</a></li>
+            <li><a href="/impressum">Impressum</a></li>
+            <li><a href="/product/1">Bearbeiten</a></li>
+            <button class="register-button" id="open-modal-register" style="background: none; border: none; cursor: pointer;">
+                <i class="fas fa-user" style="font-size: 20px; color: #cccccc;"></i>
+            </button>
+        </ul>
+    </nav>
+</header>
+<!-- Hintergrund-Overlay -->
+<div class="modal-overlay" id="modal-overlay"></div>
+
+<!-- Registrieren Modal -->
+<div class="modal" id="modal-register">
+    <h1 class="close-modal" id="close-modal-register">&times;</h1>
+    <h1 class="register-title">Register with:</h1>
+    <div class="social-buttons">
+        <button class="social-button">
+            <img src="../images/icons8-google-logo-50.png" alt="Google Icon">
+            Google
+        </button>
+        <button class="social-button">
+            <img src="../images/icons8-epische-spiele-50.png" alt="Google Icon">
+            Epic
+        </button>
+        <button class="social-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam Icon">
+            Steam
+        </button>
+    </div>
+    <div class="divider">Or</div>
+    <form action="/register" method="POST">
+        <div class="form-group">
+            <label for="username-regi">Benutzername</label>
+            <input type="text" name="username" placeholder="Benutzername" required />
+        </div>
+        <div class="form-group">
+            <label for="email-again">Email</label>
+            <input type="email" name="email" placeholder="E-Mail" required />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="E-Mail" required />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Passwort" required />
+        </div>
+        <button type="submit" class="submit-btn">Sign Up</button>
+    </form>
+    <div class="form-footer">
+        By creating an account, you agree to the <a href="#">Terms of Service</a>.<br>
+        Already have an account? <a href="#" id="open-modal-login-link">Login</a>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal" id="modal-login">
+    <h1 class="close-modal" id="close-modal-login">&times;</h1>
+    <h1 class="register-title">Login</h1>
+    <form action="/login" method="POST">
+        <div class="input-group">
+            <i class="fa fa-user"></i>
+            <input type="text" name="username" placeholder="Benutzername" required />
+        </div>
+        <div class="input-group">
+            <i class="fa fa-lock"></i>
+            <input type="password" name="password" id="login-password" placeholder="Passwort" required />
+            <i class="fa fa-eye toggle-password" id="toggle-password"></i>
+        </div>
+        <button type="submit" class="submit-btn">Login</button>
+    </form>
+    <div class="form-footer">
+        <button class="submit-btn" style="background-color: #28a745; margin-top: 10px; margin-bottom: 15px;">Als Gast</button><br>
+        <a class="no-account" href="#" id="open-modal-register-link">Noch keinen Account? Registrieren</a>
+    </div>
+</div>
+<section class="featured">
+    <h2>Empfohlene Spiele</h2>
+    <div class="game-list">
+        <div class="game-item">
+            <img src="../images/Game%201.png" alt="Spiel 1" class="game-image">
+            <span>Univers X</span>
+            <p>19,99 €</p>
+            <button class="add-to-cart-button">In den Warenkorb</button>
+        </div>
+        <div class="game-item">
+            <img src="../images/Game%202.png" alt="Spiel 2" class="game-image">
+            <span>Moritz Adventure</span>
+            <p>24,99 €</p>
+            <button class="add-to-cart-button">In den Warenkorb</button>
+        </div>
+        <div class="game-item">
+            <img src="../images/Game%203.png" alt="Spiel 3" class="game-image">
+            <span>Gen VI</span>
+            <p>25,99 €</p>
+            <button class="add-to-cart-button">In den Warenkorb</button>
+        </div>
+    </div>
+</section>
+
+<!-- Blog-Container für die Karten -->
+<section class="community">
+    <div class="community-header p">
+        <h3>Gaming-Community & Blog</h3>
+        <p>Finde die neuesten Gaming-News</p>
+    </div>
+    <div class="blog-container">
+        <div class="blog-card">
+            <h4>Gaming-Trends 2024</h4>
+            <p>Erfahre alles über die heißesten Spiele und Trends, die die Gaming-Welt erobern!</p>
+            <div class="blog-card-footer">
+                <a href="#" class="read-more">Mehr erfahren</a>
+            </div>
+        </div>
+        <div class="blog-card">
+            <h4>Tipps für Gen VI</h4>
+            <p>Lerne neue Techniken und Taktiken, um die Spiele, die du spielst, zu meistern</p>
+            <div class="blog-card-footer">
+                <a href="#" class="read-more">Mehr erfahren</a>
+            </div>
+        </div>
+        <div class="blog-card">
+            <h4>Top 5 Multiplayer-Spiele</h4>
+            <p>Schau dir unsere Auswahl der besten Multiplayer-Spiele 2024! und der letzten Jahre!</p>
+            <div class="blog-card-footer">
+                <a href="#" class="read-more">Mehr erfahren</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Kategoriebereich -->
+<section class="categories">
+    <div class="container">
+        <h5>Spielkategorien</h5>
+    </div>
+    <div class="category-list">
+        <div class="category-item">
+            <a href="OnlineShop.html" class="category-link">
+                <img src="../images/Game%2012.png" alt="game-image"  class="category-image">
+                <h6>Abenteuer</h6>
+            </a>
+        </div>
+        <div class="category-item">
+            <a href="OnlineShop.html" class="category-link">
+                <img src="../images/Game 11.webp" alt="game-image" class="category-image">
+                <h6>Action</h6>
+            </a>
+        </div>
+        <div class="category-item">
+            <a href="OnlineShop.html" class="category-link">
+                <img src="../images/Game%205.png" alt="game-image"  class="category-image">
+                <h6>Arcade</h6>
+            </a>
+        </div>
+        <div class="category-item">
+            <a href="OnlineShop.html" class="category-link">
+                <img src="../images/Game%204.png" alt="game-image"  class="category-image">
+                <h6>Survival</h6>
+            </a>
+        </div>
+        <div class="category-item">
+            <a href="OnlineShop.html" class="category-link">
+                <img src="../images/Game 3.png" alt="game-image"  class="category-image">
+                <h6>Rennspiel</h6>
+            </a>
+        </div>
+        <div class="category-item">
+            <a href="OnlineShop.html" class="category-link">
+                <img src="../images/Game%202.png" alt="game-image"  class="category-image">
+                <h6>Brettspiele</h6>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-links">
+        <a href="Impressum.html">Impressum -</a>
+        <a href="Kontaktformular.html"> Kontaktformlar -</a>
+        <a href="Detailsseite.html"> Detailsseite</a>
+    </div>
+    <p>Unsere Service Hotline ist unter 0421 999888 Montag - Freitag 09:00 - 16:00 Uhr für Sie erreichbar.</p>
+</footer>
+
+<script>
+    document.getElementById('toggle-password').addEventListener('click', function () {
+        const passwordField = document.getElementById('login-password');
+        const isPasswordVisible = passwordField.type === 'password';
+
+        // Umschalten zwischen "password" und "text"
+        passwordField.type = isPasswordVisible ? 'text' : 'password';
+
+        // Icon entsprechend ändern
+        this.classList.toggle('fa-eye', !isPasswordVisible);
+        this.classList.toggle('fa-eye-slash', isPasswordVisible);
+    });
+
+    const modalRegister = document.getElementById("modal-register");
+    const modalLogin = document.getElementById("modal-login");
+    const overlay = document.getElementById("modal-overlay");
+
+    const openModalRegister = document.getElementById("open-modal-register");
+    const closeModalRegister = document.getElementById("close-modal-register");
+
+    const openModalLoginLink = document.getElementById("open-modal-login-link");
+    const closeModalLogin = document.getElementById("close-modal-login");
+    const openModalRegisterLink = document.getElementById("open-modal-register-link");
+
+    // Öffnen und Schließen des Registrierungsmodals
+    openModalRegister.addEventListener("click", () => {
+        modalRegister.style.display = "block";
+        overlay.style.display = "block";
+    });
+
+    closeModalRegister.addEventListener("click", () => {
+        modalRegister.style.display = "none";
+        overlay.style.display = "none";
+    });
+
+    // Öffnen des Login-Modals von Registrierungsmodal aus
+    openModalLoginLink.addEventListener("click", () => {
+        modalRegister.style.display = "none";
+        modalLogin.style.display = "block";
+    });
+
+    // Öffnen des Registrierungsmodals von Loginmodal aus
+    openModalRegisterLink.addEventListener("click", () => {
+        modalLogin.style.display = "none";
+        modalRegister.style.display = "block";
+    });
+
+    // Schließen des Loginmodals
+    closeModalLogin.addEventListener("click", () => {
+        modalLogin.style.display = "none";
+        overlay.style.display = "none";
+    });
+
+    // Schließen aller Modals durch Klicken auf das Overlay
+    overlay.addEventListener("click", () => {
+        modalRegister.style.display = "none";
+        modalLogin.style.display = "none";
+        overlay.style.display = "none";
+    });
+</script>
+</body>
+</html>

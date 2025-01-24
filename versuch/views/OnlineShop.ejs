@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/OnlineShop.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<header>
+    <a href="/" class="startseite-icon">
+        <i class="fas fa-home"></i>
+    </a>
+    <!-- Titel -->
+    <div class="banner">
+        <h1>MJO GAMESCOM</h1>
+    </div>
+    <!-- Suchleiste und Filtern nach Preis -->
+    <form class="search-form" action="/onlineshop" method="get">
+        <label for="minPreis"></label>
+        <input type="number" step="1" id="minPreis" name="minPreis" class="price-input" placeholder="min €" min="0">
+
+        <label for="maxPreis"></label>
+        <input type="number" step="1" id="maxPreis" name="maxPreis" class="price-input" placeholder="max €" min="0">
+
+        <label for="searchName"></label>
+        <input type="text" id="searchName" name="searchName" class="search-input" placeholder="Suche...">
+
+        <button type="submit" class="search-button" style="background: none; border: none; cursor: pointer;">
+            <i class="fas fa-search" style="font-size: 24px; color: white;"></i>
+        </button>
+    </form>
+    <!-- Zum Warenkorb -Button -->
+    <nav class="cart-header">
+        <div class="cart-info">
+            <span class="cart-count">Artikel: <span id="item-count">0</span></span>
+            <span class="cart-total">Gesamt: <span id="total-price">0.00 €</span></span>
+            <!-- Warenkorb Icon -->
+            <button onclick="goToCart()" class="cart-button" style="background: none; border: none; cursor: pointer;">
+                <i class="fas fa-shopping-cart" style="font-size: 20px; color: #FFD700;"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="category-dropdown">
+        <form action="/categories" method="get">
+            <button type="submit" class="styled-button">Show Category</button>
+        </form>
+    </div>
+</header>
+<body>
+<div class="shop-container">
+    <!-- Bestehende Spiele (1-12) -->
+    <!-- Spiele 1-4 -->
+    <% if (produkte && produkte.length > 0) { %>
+        <% produkte.forEach(produkt => { %>
+            <div class="game-card" data-category="<%= produkt.kategorie || 'Unbekannt' %>">
+                <!-- Produktbild -->
+                <img src="<%= produkt.bilder %>" alt="<%= produkt.bezeichnung %>" class="product-image">
+
+                <!-- Verlinkung zur Detailseite -->
+                <a href="/Detailsseite/<%= produkt.id %>"style= "text-decoration:none;">
+                    <h2><%= produkt.bezeichnung %></h2>
+                </a>
+
+                <!-- Preis anzeigen -->
+                <p class="price" data-price="<%= produkt.preis %>">
+                    <%= produkt.preis.toFixed(2) %> €
+                </p>
+
+                <!-- Warenkorb-Button -->
+                <button class="add-to-cart" onclick="addToCart(this)">In den Warenkorb</button>
+
+                <!-- Aktionsbuttons -->
+                <div class="action-buttons">
+                    <a class="edit-button" href="/product/<%= produkt.id %>">Edit</a>
+                    <form action="/product/<%= produkt.id %>?_method=DELETE" method="POST" style="margin: 0;">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <!-- Keine Produkte vorhanden -->
+        <p class="no-products">Keine Produkte gefunden.</p>
+    <% } %>
+
+</div>
+<script src="/views/cart.js"></script>
+</body>
+<footer class="footer-note">
+    <h6>© 2023 MJO GAMESCOM GmbH. Diese Seite dient nur Demonstrationszwecken. </h6>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/Kontaktformular">Kontaktformular</a></li>
+            <li><a href="/impressum">Impressum</a></li>
+        </ul>
+    </nav>
+</footer>
+</html>

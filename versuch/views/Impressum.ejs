@@ -1,0 +1,79 @@
+<!-- Impressum.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Impressum</title>
+    <link rel="stylesheet" href="/Impressum.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">Menü</button>
+        <div class="dropdown-content" id="myDropdown">
+            <a href="/">Startseite</a>
+            <a href="/onlineshop">Shop</a>
+            <a href="/Kontaktformular">Kontakformular</a>
+        </div>
+    </div>
+    <button class="back-btn" onclick="goBack()">Zurück</button>
+    <h1>MJO GAMESCOM GmbH Impressum</h1>
+</header>
+<main>
+    <div class="content-container">
+        <h2>Der Inhaber dieser Website ist:</h2>
+        <section class="company-info">
+            <p>Firma: MJO GAMESCOM GmbH</p>
+            <p>Adresse: Musterstraße 1, 12345 Musterstadt, Deutschland</p>
+            <p>Telefon: 01234-56789</p>
+            <p>E-Mail: MJO@outlook.com</p>
+            <p>Umsatzsteuer-ID: DE 1345435</p>
+        </section>
+        <h2>Die gesetzlichen Vertreter der MJO GAMESCOM GmbH:</h2>
+        <section class="contact-info">
+            <p>Joseph Koll, Omar Zoghbi, Mohamed Kabbaa</p>
+        </section>
+        <h2>1. Allgemein</h2>
+        <section class="legal-info">
+            <p>1.1 Wir sind beim Amtsgericht Charlottenburg Berlin unter der Lizenz- oder Registrierungsnummer eingetragen:</p>
+            <p>HRB 123456</p>
+            <p>1.2 Der Beruf oder die Tätigkeiten, die auf dieser Website angezeigt werden, erfordern ein bestimmtes Diplom, wie hier angegeben:</p>
+            <p>Wir sind Wirtschaftsinformatiker. Dieser Beruf oder Titel wurde in Deutschland verliehen. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            <p>2. Die folgenden Informationen sind gemäß deutschem Recht erforderlich.</p>
+        </section>
+        <h2>Urheberrecht</h2>
+        <section class="copyright-info">
+            <p>© 2023 MJO GAMESCOM GmbH. Alle Rechte vorbehalten.</p>
+            <p>Alle Inhalte auf dieser Website, einschließlich Text, Grafiken, Logos und Bilder, sind Eigentum der MJO GAMESCOM GmbH und durch internationale Urheberrechtsgesetze geschützt.</p>
+            <p>Die unbefugte Nutzung und/oder Vervielfältigung dieses Materials ohne ausdrückliche und schriftliche Genehmigung des Autors und/oder Eigentümers dieser Website ist strengstens untersagt.</p>
+        </section>
+        <section class="legal-block">
+            <h2>Bilder- und Linkrechte</h2>
+            <section class="image-links-rights">
+                <h3>Haftung für Links</h3>
+                <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+                <p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+            </section>
+            <h3>Haftung für Inhalte</h3>
+            <section class="copyright-info">
+                <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+                <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+            </section>
+        </section>
+    </div>
+    <footer class="footer-note">
+        <p1>© 2023 MJO GAMESCOM GmbH. Diese Seite dient nur Demonstrationszwecken.</p1>
+    </footer>
+</main>
+<script>
+    function toggleDropdown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+</html>

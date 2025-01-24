@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Univers X - Detailseite</title>
+    <link rel="stylesheet" href="/Detailsseite.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+<button class="back-btn" onclick="goBack()">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+    </svg>
+</button>
+<div class="detail-container">
+    <img src="/<%= produkt.bilder %>" alt="<%= produkt.bezeichnung %>" class="product-image">
+    <h1><%= produkt.bezeichnung %></h1>
+    <div class="detail-header">
+        <section class="description">
+            <p><%= produkt.beschreibung %></p>
+        </section>
+    </div>
+
+    <div class="button-container">
+        <p class="price">Preis: <%= produkt.preis %> €</p>
+        <button class="add-to-cart">In den Warenkorb</button>
+    </div>
+    <!-- Bewertungen und Rezensionen-Bereich -->
+    <div class="bewertung-reviews">
+        <div class="average-rating">
+            <h4>Ratings and Reviews</h4>
+            <div class="rating-score">
+                <span class="rating-value">3.0</span>
+                <div class="stars">
+                    <span class="star selected">&#9733;</span>
+                    <span class="star selected">&#9733;</span>
+                    <span class="star selected">&#9733;</span>
+                    <span class="star">&#9734;</span>
+                    <span class="star">&#9734;</span>
+                </div>
+                <p class="total-ratings">3 Ratings</p>
+            </div>
+            <!-- Button, um das Modal zu öffnen -->
+            <button class="write-review-button" onclick="openModal()">Write A Review</button>
+            <!-- Modal für das Schreiben einer Bewertung -->
+            <div id="review-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <h3>Write a Review</h3>
+                    <div class="product-info">
+                        <img src="../Bilder/Game%201.png" alt="Univers X" class="modal-game-image">
+                        <p>Univers X - Sci-Fi Adventure</p>
+                    </div>
+                    <form id="review-form" onsubmit="submitReview()">
+                        <label class="overall-rating">Overall Rating:</label>
+                        <div class="star-rating">
+                            <span class="star" onclick="setRating(1)">&#9733;</span>
+                            <span class="star" onclick="setRating(2)">&#9733;</span>
+                            <span class="star" onclick="setRating(3)">&#9733;</span>
+                            <span class="star" onclick="setRating(4)">&#9733;</span>
+                            <span class="star" onclick="setRating(5)">&#9733;</span>
+                        </div>
+                        <div class="recommend-checkbox">
+                            <input type="checkbox" id="recommend" name="recommend">
+                            <label for="recommend">Yes, I recommend this item</label>
+                        </div>
+                        <label for="nickname">Nickname:</label>
+                        <input type="text" id="nickname" name="nickname" placeholder="Your nickname" required>
+
+                        <label for="email">Your email:</label>
+                        <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                        <label for="headline">Your review headline:</label>
+                        <input type="text" id="headline" name="headline" placeholder="Your review headline" required>
+
+                        <label for="review-text">Your review:</label>
+                        <textarea id="review-text" name="review-text" rows="5" placeholder="Write your review here..." required></textarea>
+
+                        <div class="media-buttons">
+                            <button type="button" class="add-media-button">Add Photo</button>
+                            <button type="button" class="add-media-button">Add Video</button>
+                        </div>
+                        <p class="media-info">Add up to 6 photos</p>
+
+                        <button type="submit" class="submit-review-button">Post Review</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <button class="show-reviews-button" onclick="showReviews()">Show All Reviews</button>
+            <div id="reviews-list" class="reviews-list" style="display:none;">
+                <!-- Dynamisch hinzugefügte Reviews erscheinen hier -->
+            </div>
+        </div>
+
+        <!-- Trennlinie zwischen den Abschnitten -->
+        <div class="divider"></div>
+
+        <!-- Übersicht über die Sternebewertungen -->
+        <div class="rating-breakdown">
+            <div class="rating-row">
+                <span>5 Stars</span>
+                <div class="rating-bar"><div class="filled" ></div></div>
+                <span>1</span>
+            </div>
+            <div class="rating-row">
+                <span>4 Stars</span>
+                <div class="rating-bar"><div class="filled" ></div></div>
+                <span>0</span>
+            </div>
+            <div class="rating-row">
+                <span>3 Stars</span>
+                <div class="rating-bar"><div class="filled" ></div></div>
+                <span>1</span>
+            </div>
+            <div class="rating-row">
+                <span>2 Stars</span>
+                <div class="rating-bar"><div class="filled"></div></div>
+                <span>0</span>
+            </div>
+            <div class="rating-row">
+                <span>1 Star</span>
+                <div class="rating-bar"><div class="filled" ></div></div>
+                <span>1</span>
+            </div>
+            <p class="recommendation">33.0% of reviewers would recommend this product to a friend</p>
+        </div>
+    </div>
+
+    <section class="additional-info">
+        <h2>Spiel-Features:</h2>
+        <p>Offene Weltraum-Erkundung mit verschiedenen Planeten</p>
+        <p>Intensive Kämpfe mit KI-gesteuerten Feinden</p>
+        <p>Umfangreiche Anpassung und Entwicklung des Charakters</p>
+        <p>Einzel- und Mehrspieler-Modi</p>
+    </section>
+
+    <div class="requirements">
+        <h3>Systemanforderungen</h3>
+
+        <h4>Minimum</h4>
+        <p><strong>OS:</strong> 64 Bit erforderlich, Windows 10</p>
+        <p><strong>Prozessor:</strong> 3.3 GHz Intel Core i3-3220 (2 Kerne,4 Threads),AMD Ryzen 3 1200 3.1 GHz (4 Kerne) oder besser</p>
+        <p><strong>RAM:</strong> 4 GB</p>
+        <p><strong>Grafik:</strong> 128 MB Video-RAM und Unterstützung für Pixel Shader 3.0 (NVIDIA GeForce 6600, ATI Radeon X1300 oder besser)</p>
+        <p><strong>DirectX:</strong> Version 11</p>
+        <p><strong>Netzwerk:</strong> Breitband-Internetverbindung</p>
+
+        <h4>Empfohlen</h4>
+        <p><strong>OS:</strong> 64 Bit Windows 10</p>
+        <p><strong>Prozessor:</strong>Intel Core i5(4 Kerne),AMD Ryzen 5 oder besser</p>
+        <p><strong>RAM:</strong> 8 GB</p>
+        <p><strong>Grafik:</strong> 1 GB Video-RAM, NVIDIA GTX 650, AMD Radeon HD 7750 oder besser</p>
+        <p><strong>DirectX:</strong> Version 11</p>
+        <p><strong>Netzwerk:</strong> Breitband-Internetverbindung</p>
+        <p><strong>Speicherplatz:</strong> 51 GB verfügbar</p>
+    </div>
+
+    <div class="signup-section">
+        <p>Verpasse keinen Deal! Erhalte die Angebote als Erstes und schnapp dir die besten Preise.</p>
+        <button id="subscribe-button" onclick="showCheckmark()">Jetzt abonnieren!</button>
+        <span id="checkmark" class="checkmark" >✅️</span>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <p>Unsere Service Hotline ist unter 0421 999888 Montag - Freitag 09:00 - 16:00 Uhr für Sie erreichbar.</p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                <a href="#">Widerrufsbelehrung / Muster-Widerrufsformular</a>
+                <a href="Impressum.html">Impressum</a>
+                <a href="#">Datenschutzerklärung</a>
+                <a href="#">AGB und Kundeninformationen</a>
+                <a href="Kontaktformular.html">Kontaktformular</a>
+            </p>
+        </div>
+
+        <div class="footer-app">
+            <h4>GET THE APP</h4>
+            <div class="app-buttons">
+                <a href="https://www.apple.com/" target="_blank">
+                    <img src="../images/app_store-icon.png" alt="App Store" >
+                </a>
+                <a href="https://play.google.com/" target="_blank">
+                    <img src="../images/google_play-icon.png" alt="Google Play" >
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <h4>CONNECT WITH US</h4>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="../images/facebook-icon.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="../images/instagram-icon.png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank">
+                    <img src="../images/linkedin-icon.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.whatsapp.com/" target="_blank">
+                    <img src="../images/whatsapp-icon.png" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+
+    </footer>
+</div>
+
+<script src="../Js/Detailseite.js"></script>
+</body>
+</html>
