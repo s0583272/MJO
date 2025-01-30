@@ -4,47 +4,310 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-/* Allgemeine Stile */
-body {
-    font-family: 'Press Start 2P', sans-serif;
-    color: #FFD700;
-    background-image: url('hintergrund.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100%;
+.input-group {
+    margin-bottom: 15px;
+}
+.register-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Breite des Kreises */
+    height: 40px; /* Höhe des Kreises */
+    background-color: transparent;
+    border: 2px solid #cccccc; /* Kreis-Rahmen */
+    border-radius: 50%; /* Macht den Button rund */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    padding: 10px;
 }
 
-/* Header-Bereich */
-.banner {
-    background-color: #24075D;
-    border: 2px solid #00FFF7;
-    color: #FFFFFF;
+.input-group i {
+    color: #ccc;
+}
+
+.input-group input {
+    border: none;
+    background: transparent;
+    flex: 1;
+    color: #fff;
+    outline: none;
+}
+
+.social-button i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+.social-button:hover {
+    color: black;
+    transform: scale(1.1);
+}
+
+.toggle-password {
+    cursor: pointer;
+}
+.register-button i {
+    font-size: 20px;
+    color: #cccccc;
+    transition: color 0.3s ease;
+}
+
+/* Hover-Effekt */
+.register-button:hover {
+    transform: scale(1.2); /* Vergrößert den Button */
+    border-color: #FFD700; /* Ändert die Rahmenfarbe */
+    color: #FFD700;
+}
+
+.register-button:hover i {
+    color: #FFD700; /* Ändert die Icon-Farbe beim Hover */
+}
+
+
+h2{
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    color: #FFFFFF; /* Weißer Text für Kontrast */
+    margin-bottom: 20px;
+    font-size: 3.9rem;
     text-align: center;
-    padding: 40px 20px;
-    -webkit-text-stroke: 1px white;
+    padding: 10px 20px; /* Abstand innerhalb des Hintergrunds */
+    border-radius: 15px; /* Abgerundete Ecken */
+    height: auto; /* Höhe wird automatisch angepasst */
+    display: inline-block; /* Box wird nur so groß wie der Inhalt */
+}
+h4{
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    color: #FFFFFF; /* Weißer Text für Kontrast */
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px 20px; /* Abstand innerhalb des Hintergrunds */
+    border-radius: 15px; /* Abgerundete Ecken */
+    height: auto; /* Höhe wird automatisch angepasst */
+    display: inline-block; /* Box wird nur so groß wie der Inhalt */
+}
+h5{
+    -webkit-text-stroke: 1px white; /* rand Farbe der schrift*/
+    color: gold;
+}
+h6{
+    -webkit-text-stroke: 1px white; /* rand Farbe der schrift*/
+    color: gold;
+}
+/* Stile für die gesamte Seite */
+body {
+    font-family: 'Press Start 2P', sans-serif; /* Setzt die Retro-Schriftart */
+    color: #FFD700; /* Gelber Text für gute Lesbarkeit */
+    background-image: url('hintergrund.webp'); /* Hintergrundbild für das Seiten-Design */
+    background-size: cover; /* Hintergrundbild füllt die Seite */
+    background-repeat: no-repeat; /* Bild wiederholt sich nicht */
+    background-position: center; /* Bild zentriert */
+    height: 100%; /* Bildhöhe deckt den gesamten Bildschirm */
+}
+.no-account{
+    margin-top: 10px;
+    align-items: center;
+}
+.guest-btn {
+    background-color: #28a745;
+    margin-top: 10px;
+}
+/* Header-Bereich oben auf der Seite */
+.banner {
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    color: #FFFFFF; /* Weißer Text für Kontrast */
+    text-align: center; /* Zentriert den Text */
+    padding: 40px 20px; /* Abstand für einen großzügigen Look */
+    -webkit-text-stroke: 1px white; /* rand Farbe der schrift*/
+}
+.register-button {
+    margin: 0 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #24075D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    color: #fff;
+    width: 400px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* Hintergrund abdunkeln */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 350px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cccccc;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.social-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.social-button:hover {
+    border-bottom: 2px solid yellow;
+}
+.register-title{
+    margin-bottom: 0;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 10px; /* Abstand innerhalb des Hintergrunds */
+    border-radius: 15px; /* Abgerundete Ecken */
+    height: auto; /* Höhe wird automatisch angepasst */
+    display: inline-block; /* Box wird nur so groß wie der Inhalt */
+}
+
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ffc107;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e0a800;
+}
+
+.form-footer {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 20px;
+    color: #888;
+}
+
+.form-footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+.close-modal {
+    color: #FFD700;
+    background-color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+
 }
 
 .banner h1 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Große Schrift für den Haupttitel */
 }
 
 .banner p {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Kleinere Schrift für den Untertitel */
 }
 
-/* Navigation */
+/* Navigation oberhalb des Inhalts */
 .navbar {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
+    display: flex; /* Flexbox zur horizontalen Ausrichtung */
+    justify-content: center; /* Zentriert die Navigation */
+    background-color: #333; /* Dunkler Hintergrund für Kontrast */
 }
 
 .navbar ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap; /* Zeilenumbruch bei kleinen Bildschirmen */
+    list-style: none; /* Entfernt die Bulletpoints */
+    display: flex; /* Horizontale Ausrichtung der Links */
 }
 
 .navbar li {
@@ -54,9 +317,9 @@ body {
 }
 
 .navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
+    color: white; /* Gelbe Links für bessere Sichtbarkeit */
+    text-decoration: none; /* Entfernt Unterstrich */
+    font-size: 1.1rem; /* Mittlere Schriftgröße für Lesbarkeit */
 }
 
 .navbar a:hover {
@@ -65,198 +328,269 @@ body {
 
 /* Bereich für empfohlene Spiele */
 .featured {
-    text-align: center;
-    padding: 40px 20px;
+    text-align: center; /* Zentriert den Text */
+    padding: 40px 20px; /* Innenabstand für Bereich */
 }
 
+
 .featured h2 {
-    background-color: #24075D;
-    border: 2px solid #00FFF7;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-    font-size: 2.5rem;
-    padding: 10px 20px;
-    border-radius: 15px;
-    display: inline-block;
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    color: #FFFFFF; /* Weißer Text für Kontrast */
+
+    margin-bottom: 20px; /* Abstand unter dem Titel */
+    font-size: 2.5rem; /* Große Schrift für Titel */
 }
 
 .game-list {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: flex; /* Flexbox für horizontale Ausrichtung */
+    justify-content: center; /* Zentriert die Spieleliste */
+    gap: 30px; /* Abstand zwischen den Spielen */
+    flex-wrap: wrap; /* Bricht die Liste bei kleinen Bildschirmen um */
 }
 
 .game-item {
-    background-color: #24075D;
-    border: 2px solid #00FFF7;
-    color: #FFFFFF;
-    padding: 30px;
-    width: 220px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: transform 0.3s;
-    overflow: hidden;
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    color: #FFFFFF; /* Weißer Text für Kontrast */
+    padding: 30px; /* Innenabstand für mehr Platz */
+    width: 220px; /* Breite der Spiel-Container */
+    height: 300px; /* Höhe der Spiel-Container */
+    display: flex; /* Flexbox für vertikale Ausrichtung */
+    flex-direction: column; /* Vertikale Anordnung */
+    align-items: center; /* Zentriert Inhalt horizontal */
+    justify-content: center; /* Zentriert Inhalt vertikal */
+    border-radius: 10px; /* Abgerundete Ecken */
+    font-size: 1.0rem; /* Große Schrift für Lesbarkeit */
+    transition: transform 0.3s; /* Sanfte Vergrößerung beim Hover */
+    overflow: hidden; /* Verhindert das Überlaufen von Inhalt */
 }
 
 .game-image {
-    max-width: 90%;
-    max-height: 150px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    max-width: 90%; /* Bild passt sich dem Container an */
+    max-height: 150px; /* Maximale Bildhöhe */
+    border-radius: 5px; /* Runde Bildkanten */
+    margin-bottom: 10px; /* Abstand zwischen Bild und Text */
 }
 
+/* Hover-Effekt für Spiel-Container */
 .game-item:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1); /* Vergrößert das Spiel-Element bei Hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Schatten für mehr Tiefe */
 }
 
+/* Stil für die Spielbeschreibung */
 .game-description {
-    font-size: 0.71rem;
-    color: #000000;
-    margin-top: 10px;
-    text-align: center;
+    font-size: 0.71rem; /* Kleinere Schriftgröße für die Beschreibung */
+    color: #000000; /* Setzt eine graue Farbe für den Text */
+    margin-top: 10px; /* Abstand zwischen Titel und Beschreibung */
+    text-align: center; /* Zentriert den Text */
 }
 
 /* Community-Bereich */
 .community {
-    text-align: center;
-    padding: 40px 20px;
+    text-align: center; /* Zentriert den Text */
+    padding: 40px 20px; /* Innenabstand für Bereich */
 }
 
 .community h2 {
-    margin-bottom: 10px;
-    font-size: 2rem;
+    margin-bottom: 10px; /* Abstand unter dem Titel */
+    font-size: 2rem; /* Große Schrift für Titel */
 }
 
-.community h3 {
-    background-color: #24075D;
-    border: 2px solid #00FFF7;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-    font-size: 2.9rem;
-    padding: 10px 20px;
-    border-radius: 20px;
-    display: block;
-}
-
-.community-header p {
-    background-color: #24075D;
-    border: 2px solid #00FFF7;
-    color: #FFFFFF;
-    font-size: 2.9rem;
-    padding: 10px 20px;
-    border-radius: 15px;
-    display: inline-block;
-}
-
-.community h4 {
-    background-color: #24075D;
-    margin-bottom: 20px;
-    font-size: 2.9rem;
-    text-align: center;
-}
-
-.blog-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.blog-card {
-    width: 300px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-    background-color: #24075D;
-    border: 2px solid #00FFF7;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 300px;
-}
-
-.blog-card h4 {
-    color: #FFFFFF;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    text-align: center;
-    background-color: #24075D;
-    border: 2px solid #00FFF7;
-    border-radius: 20px;
-}
-
-.blog-card p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    color: #FFFFFF;
-}
-
-.blog-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-
-.read-more {
-    color: #8A2BE2;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    margin-top: auto;
-}
-
-.read-more:hover {
-    color: #ffaa00;
-}
-
-.blog-card-footer {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: auto;
-}
-
-/* Footer-Bereich */
+/* Footer-Bereich am Seitenende */
 footer {
-    background-color: #24075D;
-    border: 2px solid #00FFF7;
-    text-align: center;
-    padding: 20px;
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    text-align: center; /* Zentriert den Inhalt */
+    padding: 20px; /* Innenabstand für Footer */
 }
 
 .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 10px;
+    display: flex; /* Flexbox zur horizontalen Ausrichtung */
+    justify-content: center; /* Zentriert die Links */
+    gap: 15px; /* Abstand zwischen Links */
+    margin-bottom: 10px; /* Abstand zum restlichen Text */
 }
 
 .footer-links a {
-    color: #FFFFFF;
-    text-decoration: none;
+    color: #FFFFFF; /* Gelbe Links für Sichtbarkeit */
+    text-decoration: none; /* Entfernt Unterstrich */
 }
 
 .footer-links a:hover {
-    color: #ffaa00;
+    color: #ffaa00; /* Ändert die Farbe auf Weiß bei Hover */
 }
 
+/* Stil für die untere schrift i footer also: © 2023 MJO GAMESCOM GmbH. Diese Seite dient nur Demonstrationszwecken. */
 footer p {
+    color: #FFFFFF; /* Ersetze #ff0000 durch deine gewünschte Farbe */
+}
+
+
+
+/* Container mit Flexbox für die überschrit h3 und p */
+.community-header {
+    display: flex;
+    flex-direction: column; /* Ordnet die Elemente vertikal an */
+    align-items: center; /* Zentriert die Elemente horizontal */
+    gap: 20px; /* Fügt einen Abstand zwischen den Elementen hinzu */
+}
+
+/* Stil für die Überschrift (h5) im Community-Bereich */
+.community h3 {
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    color: #FFFFFF; /* Weißer Text für Kontrast */
+    margin-bottom: 20px; /* Fügt einen Abstand unter der Überschrift hinzu */
+    font-size: 2.9rem; /* Setzt die Schriftgröße der Überschrift */
+    text-align: center; /* Zentriert den Text horizontal */
+    padding: 10px 20px; /* Abstand innerhalb des Hintergrunds */
+    border-radius: 20px; /* Abgerundete Ecken */
+    display: block;
+}
+
+/* für "findest die neusten gaming-news p */
+.community-header p {
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    color: #FFFFFF; /* Weißer Text für Kontrast */
+    font-size: 2.9rem;
+    padding: 10px 20px; /* Abstand innerhalb des Hintergrunds */
+    border-radius: 15px; /* Abgerundete Ecken */
+    display: inline-block; /* Box wird nur so groß wie der Inhalt */
+}
+
+.community h4 {
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    margin-bottom: 20px; /* Fügt einen Abstand unter der Überschrift hinzu */
+    font-size: 2.9rem; /* Setzt die Schriftgröße der Überschrift */
+    text-align: center; /* Zentriert den Text horizontal */
+}
+
+/* Stil für die Überschrift (h5) innerhalb der Blog-Karten */
+.blog-card h4 {
+    color: #FFFFFF; /* weiß */
+    font-size: 1.2rem; /* Setzt die Schriftgröße für den Titel der Karte */
+    margin-bottom: 20px; /* Fügt einen kleinen Abstand unter dem Titel hinzu */
+    text-align: center; /* Zentriert den Text horizontal */
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    border-radius: 20px; /* Abgerundete Ecken */
+}
+
+
+
+/* Stil für den Text im Community-Bereich (p) */
+.community p {
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    font-size: 1.2rem; /* Setzt die Schriftgröße für den Text */
+    margin-bottom: 30px; /* Fügt einen Abstand unter dem Text hinzu */
+}
+
+
+/* Blog-Container für die Karten also position im raum also der Container */
+.blog-container {
+    display: flex; /* Flexbox Layout: Anordnung der Blog-Karten nebeneinander */
+    justify-content: center; /* Zentriert die Karten horizontal */
+    gap: 20px; /* Fügt einen Abstand zwischen den einzelnen Karten hinzu */
+    flex-wrap: wrap; /* Ermöglicht das Umbruch-Verhalten bei kleineren Bildschirmgrößen */
+}
+
+/* Stile für jede Blog-Karte unter finde die neusten gaing-news */
+.blog-card {
+    width: 300px; /* Legt die Breite der Blog-Karten fest */
+    padding: 20px; /* Fügt einen Innenabstand (Padding) innerhalb der Karte hinzu */
+    border-radius: 10px; /* Abgerundete Ecken für die Karten */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Fügt einen leichten Schatten um die Karten hinzu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Fügt einen Übergangseffekt für Hover-Effekte hinzu */
+    text-align: left; /* Setzt den Text linksbündig */
+    background-color: #24075D;
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    display: flex;
+    flex-direction: column; /* Stapelt die Inhalte vertikal */
+    justify-content: space-between; /* Verteilt Platz zwischen den Elementen */
+    height: 300px; /* Gleiche Höhe für alle Blöcke */
+}
+
+
+/* Stil für den Text (p1) innerhalb der Blog-Karten */
+.blog-card p{
+    font-size: 1rem; /* Setzt die Schriftgröße des Texts innerhalb der Karte */
+    margin-bottom: 20px; /* Fügt einen Abstand unter dem Text hinzu */
     color: #FFFFFF;
 }
 
-/* Kategorien-Bereich */
+
+/* Hover-Effekt für die Blog-Karten */
+.blog-card:hover {
+    transform: translateY(-10px); /* Bewegt die Karte um 10px nach oben, wenn der Benutzer mit der Maus darüber fährt */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Verstärkt den Schatten bei Hover für mehr Tiefe */
+}
+
+/* Stil für den "Mehr erfahren"-Link */
+.read-more {
+    color: #8A2BE2; /* Setzt die Textfarbe des Links auf Gold */
+    text-decoration: none; /* Entfernt die Standard-Unterstreichung des Links */
+    font-weight: bold; /* Setzt den Link auf fett */
+    transition: color 0.3s ease; /* Fügt einen Übergangseffekt für Farbänderungen hinzu */
+    margin-top: auto; /* Schiebt den "Mehr erfahren"-Link nach unten */
+}
+
+/* Hover-Effekt für den "Mehr erfahren"-Link */
+.read-more:hover {
+    color: #ffaa00; /* Ändert die Farbe des Links beim Hover */
+}
+
+/* Container für "Mehr erfahren"-Link in den Blog-Karten */
+.blog-card-footer {
+    display: flex;
+    justify-content: flex-start; /* Platziert den Link am linken Rand */
+    align-items: center; /* Vertikal ausrichten */
+    margin-top: auto; /* Schiebt den "Mehr erfahren"-Link nach unten */
+}
+
+/*/////////////////// der Kategorien block beginnt //////////////////*/
+
+h5{
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    color: #FFFFFF; /* Weißer Text für Kontrast */
+    margin-bottom: 20px;
+    font-size: 2.9rem;
+    text-align: center;
+    padding: 10px 20px; /* Abstand innerhalb des Hintergrunds */
+    border-radius: 15px; /* Abgerundete Ecken */
+    height: auto; /* Höhe wird automatisch angepasst */
+    display: inline-block; /* Box wird nur so groß wie der Inhalt */
+    margin-left: auto; /* Automatischer Abstand links */
+    margin-right: auto; /* Automatischer Abstand rechts */
+}
+
+/* Der Container, in dem sich das h5 befindet */
+.container {
+    display: flex; /* Flexbox aktivieren */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
+    height: 100%; /* Höhe des Containers auf 100% des Viewports setzen */
+}
+
+h6{
+    background-color: #24075D; /* Dunkler Blauton für Boxen */
+    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
+    color: #FFFFFF; /* Weißer Text für Kontrast */
+    padding: 10px 20px; /* Abstand innerhalb des Hintergrunds */
+    border-radius: 15px; /* Abgerundete Ecken */
+    text-align: center; /* Zentriert den Text */
+    font-size: 1.5rem; /* Schriftgröße */
+    margin-top: 10px; /* Abstand zum Element darüber */
+}
+
 .categories {
     padding: 20px;
     background-color: rgba(255, 0, 0, 0);
     color: white;
+
 }
 
 .category-list {
@@ -267,9 +601,9 @@ footer p {
 
 .category-item {
     text-align: center;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
+    flex-direction: column; /* Vertikale Ausrichtung von Bild und Text */
+    align-items: center; /* Zentriert das Bild und den Text */
+    width: 80%; /* Bildbreite auf 70% der Containerbreite */
 }
 
 .category-image {
@@ -285,24 +619,28 @@ footer p {
     text-decoration: none;
     font-weight: bold;
 }
-
 .category-link:hover {
     text-decoration: underline;
 }
 
+
 .add-to-cart-button {
-    background-color: #FFD700;
-    color: #000000;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    background-color: #FFD700; /* Gelber Hintergrund */
+    color: #000000; /* Schwarzer Text */
+    border: none; /* Keine Umrandung */
+    padding: 10px 20px; /* Etwas mehr Polsterung */
+    border-radius: 5px; /* Abgerundete Ecken */
+    cursor: pointer; /* Zeiger-Cursor */
+    font-size: 16px; /* Etwas größere Schrift */
+    transition: background-color 0.3s; /* Sanfter Übergang für Hover-Effekt */
 }
 
 .add-to-cart-button:hover {
-    background-color: #FF8C00;
+    background-color: #FF8C00; /* Dunklerer Hintergrund bei Hover */
+}
+
+.category-link:hover {
+    text-decoration: underline;
 }
 
 /* Media Queries für Responsive Design */
