@@ -643,18 +643,19 @@ h6{
     text-decoration: underline;
 }
 
+
 /* Media Queries für Responsive Design */
 @media (max-width: 768px) {
     .banner h1 {
-        font-size: 2rem;
+        font-size: 2rem; /* Schriftgröße für mittelgroße Bildschirme */
     }
 
     .banner p {
-        font-size: 1rem;
+        font-size: 1rem; /* Schriftgröße für mittelgroße Bildschirme */
     }
 
     .navbar ul {
-        flex-direction: column;
+        flex-direction: column; /* Navigation vertikal anordnen */
         align-items: center;
     }
 
@@ -668,28 +669,28 @@ h6{
     }
 
     .category-list {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Zwei Spalten für mittelgroße Bildschirme */
     }
 }
 
 @media (max-width: 480px) {
     .banner h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Schriftgröße für kleine Bildschirme */
     }
 
     .banner p {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Schriftgröße für kleine Bildschirme */
     }
 
     .game-list {
-        flex-direction: column;
+        flex-direction: column; /* Spielitems vertikal anordnen */
     }
 
     .category-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Eine Spalte für sehr kleine Bildschirme */
     }
 
     .category-item {
-        width: 100%;
+        width: 100%; /* Volle Breite für jede Kategorie */
     }
 }
