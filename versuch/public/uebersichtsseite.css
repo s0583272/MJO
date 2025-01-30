@@ -643,69 +643,34 @@ h6{
     text-decoration: underline;
 }
 
-/* Handy-Styles */
 @media (max-width: 768px) {
-    h2 {
-        width: 100%;
-        font-size: 2rem; /* Noch kleinere Schriftgröße für Überschriften */
+    h5 {
+        font-size: 2rem;
+        padding: 6px 12px;
+        border-radius: 10px;
     }
-
-    .game-item {
-        width: 100%;
-        width: 100%; /* Eine Spalte auf Handys */
-        padding: 10px;
-    }
-
     .navbar ul {
-        width: 100%;
-        flex-direction: column; /* Navigation vertikal ausrichten */
+        flex-direction: column;
+        align-items: center;
     }
 
-    .blog-card {
-        width: 100%; /* Volle Breite für Blog-Karten */
+    .game-list, .blog-container, .category-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer {
+        padding: 15px;
+        font-size: 14px;
     }
 
-    .category-list {
-        width: 100%;
-        grid-template-columns: repeat(1, 1fr); /* Eine Spalte für Kategorien */
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
     }
 
-    .banner h1 {
-        width: 100%;
-        font-size: 1.5rem; /* Kleinere Schriftgröße für den Banner-Titel */
-    }
-
-    .community h3 {
-        width: 100%;
-        font-size: 1.5rem; /* Kleinere Schriftgröße für Community-Überschriften */
-    }
-
-    .community-header p {
-        width: 100%;
-        font-size: 1.2rem; /* Kleinere Schriftgröße für Community-Text */
-    }
-
-    .register-button {
-        width: 100%; /* Volle Breite für Buttons */
-        margin: 10px 0; /* Abstand zwischen Buttons */
-    }
-
-    .input-group {
-        width: 100%;
-        flex-direction: column; /* Input-Gruppen vertikal ausrichten */
-    }
-
-    .input-group input {
-        width: 100%; /* Volle Breite für Input-Felder */
-    }
-
-    .social-buttons {
-        width: 100%;
-        flex-direction: column; /* Soziale Buttons vertikal ausrichten */
-    }
-
-    .social-button {
-        width: 100%; /* Volle Breite für soziale Buttons */
+    .footer-links a {
+        margin: 5px 0;
     }
 }
-
