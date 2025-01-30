@@ -643,60 +643,62 @@ h6{
     text-decoration: underline;
 }
 
-
-/* Handy-Styles */
-@media (max-width: 480px) {
-    h2 {
-        font-size: 2rem; /* Noch kleinere Schriftgröße für Überschriften */
+/* Media Queries für Responsive Design */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2rem; /* Reduzierte Schriftgröße für Tablets */
     }
 
-    .game-item {
-        width: 100%; /* Eine Spalte auf Handys */
-        padding: 10px;
+    .banner p {
+        font-size: 1rem; /* Reduzierte Schriftgröße für Tablets */
     }
 
     .navbar ul {
-        flex-direction: column; /* Navigation vertikal ausrichten */
+        flex-direction: column; /* Navigation vertikal anordnen */
+        align-items: center;
+        padding: 0; /* Entfernt eventuelle seitliche Abstände */
     }
 
-    .blog-card {
-        width: 100%; /* Volle Breite für Blog-Karten */
+    .game-list {
+        flex-direction: column; /* Spieleliste vertikal anordnen */
+        align-items: center;
+        gap: 20px; /* Mäßigere Lücke zwischen den Spielen */
+    }
+
+    .game-item, .blog-card {
+        width: 90%; /* Breiter für kleinere Bildschirme */
+        margin: 10px 0; /* Abstand oben und unten */
     }
 
     .category-list {
-        grid-template-columns: repeat(1, 1fr); /* Eine Spalte für Kategorien */
+        grid-template-columns: repeat(2, 1fr); /* Zwei Spalten statt drei */
+        gap: 20px; /* Begrenzter Abstand */
     }
+}
 
+@media (max-width: 480px) {
     .banner h1 {
-        font-size: 1.5rem; /* Kleinere Schriftgröße für den Banner-Titel */
+        font-size: 1.5rem; /* Weitere Reduzierung der Schriftgröße für Handys */
     }
 
-    .community h3 {
-        font-size: 1.5rem; /* Kleinere Schriftgröße für Community-Überschriften */
+    .banner p {
+        font-size: 0.9rem; /* Weitere Reduzierung der Schriftgröße für Handys */
     }
 
-    .community-header p {
-        font-size: 1.2rem; /* Kleinere Schriftgröße für Community-Text */
+    .navbar ul {
+        padding: 15px 0; /* Etwas mehr Innenabstand für eine bessere Gestaltung */
     }
 
-    .register-button {
-        width: 100%; /* Volle Breite für Buttons */
-        margin: 10px 0; /* Abstand zwischen Buttons */
+    .navbar li {
+        padding: 10px 0; /* Platzsparender bei Handyversionen */
+        text-align: center;
     }
 
-    .input-group {
-        flex-direction: column; /* Input-Gruppen vertikal ausrichten */
+    .featured, .community {
+        padding: 20px 10px; /* Weniger Polsterung für kompakteres Layout */
     }
 
-    .input-group input {
-        width: 100%; /* Volle Breite für Input-Felder */
-    }
-
-    .social-buttons {
-        flex-direction: column; /* Soziale Buttons vertikal ausrichten */
-    }
-
-    .social-button {
-        width: 100%; /* Volle Breite für soziale Buttons */
+    .category-list {
+        grid-template-columns: 1fr; /* Eine Spalte für Handys */
     }
 }
