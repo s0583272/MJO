@@ -643,28 +643,69 @@ h6{
     text-decoration: underline;
 }
 
-/* Responsive Design */
+/* Handy-Styles */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.2rem;
-        text-align: center; /* Zentriert den Header-Text */
+    h2 {
+        width: 100%;
+        font-size: 2rem; /* Noch kleinere Schriftgröße für Überschriften */
     }
 
-    form, .product-details {
-        margin: 10px;
-        padding: 15px;
+    .game-item {
+        width: 100%;
+        width: 100%; /* Eine Spalte auf Handys */
+        padding: 10px;
     }
 
-    .styled-button {
-        font-size: 0.9rem;
+    .navbar ul {
+        width: 100%;
+        flex-direction: column; /* Navigation vertikal ausrichten */
     }
 
-    .delete-button {
-        font-size: 0.9rem;
+    .blog-card {
+        width: 100%; /* Volle Breite für Blog-Karten */
     }
 
-    footer {
-        text-align: center; /* Zentriert den Footer-Text */
+    .category-list {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr); /* Eine Spalte für Kategorien */
+    }
+
+    .banner h1 {
+        width: 100%;
+        font-size: 1.5rem; /* Kleinere Schriftgröße für den Banner-Titel */
+    }
+
+    .community h3 {
+        width: 100%;
+        font-size: 1.5rem; /* Kleinere Schriftgröße für Community-Überschriften */
+    }
+
+    .community-header p {
+        width: 100%;
+        font-size: 1.2rem; /* Kleinere Schriftgröße für Community-Text */
+    }
+
+    .register-button {
+        width: 100%; /* Volle Breite für Buttons */
+        margin: 10px 0; /* Abstand zwischen Buttons */
+    }
+
+    .input-group {
+        width: 100%;
+        flex-direction: column; /* Input-Gruppen vertikal ausrichten */
+    }
+
+    .input-group input {
+        width: 100%; /* Volle Breite für Input-Felder */
+    }
+
+    .social-buttons {
+        width: 100%;
+        flex-direction: column; /* Soziale Buttons vertikal ausrichten */
+    }
+
+    .social-button {
+        width: 100%; /* Volle Breite für soziale Buttons */
     }
 }
 
