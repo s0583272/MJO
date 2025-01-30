@@ -657,6 +657,12 @@ h6{
         width: 100%;
     }
 
+    .game-item {
+        width: 45%; /* Zwei Spalten auf Tablets */
+        height: auto;
+        padding: 20px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -670,5 +676,14 @@ h6{
 
     .category-image {
         width: 100%;
+    }
+
+    .game-item {
+        width: 100%; /* Eine Spalte auf Handys */
+        padding: 10px;
+    }
+
+    .banner h1 {
+        font-size: 1.5rem; /* Kleinere Schriftgröße */
     }
 }
