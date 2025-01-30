@@ -645,7 +645,7 @@ h6{
 
 
 /* Media Queries für Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 300px) {
     .banner h1 {
         font-size: 2rem; /* Schriftgröße für mittelgroße Bildschirme */
     }
@@ -673,7 +673,7 @@ h6{
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 300px) {
     .banner h1 {
         font-size: 1.5rem; /* Schriftgröße für kleine Bildschirme */
     }
