@@ -647,10 +647,19 @@ h6{
     .container {
         padding: 10px;
     }
+    .category-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
     .container {
         padding: 5px;
+    }
+    .category-list {
+        grid-template-columns: 1fr;
+    }
+    .category-item {
+        width: 100%;
     }
 }
