@@ -2,7 +2,7 @@ import methodOverride from 'method-override';
 import express from 'express';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getAllProdukte, getProdukteCount, changeprodukte, getProduktById, getProductByIdLOL, createProduct, updateProduct, deleteProduct, getProdukteByPriceRangeAndName, addToWarenkorb, registerUser, loginUser,getAllKategorien} from './database.js';
+import { getAllProdukte, getProdukteCount, changeprodukte,getKategorieMitSpielAnzahl, getProduktById, getProductByIdLOL, createProduct, updateProduct, deleteProduct, getProdukteByPriceRangeAndName, addToWarenkorb, registerUser, loginUser,getAllKategorien} from './database.js';
 //import { sanitizeArray, sanitizeString } from './utils/sanitize.js';
 
 
