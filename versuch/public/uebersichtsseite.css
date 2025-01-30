@@ -644,38 +644,10 @@ h6{
 }
 
 
-@media (max-width: 768px) {
-    .category-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .category-item {
-        width: 100%;
-    }
-
-    .category-image {
-        width: 100%;
-    }
-
-    .game-item {
-        width: 45%; /* Zwei Spalten auf Tablets */
-        height: auto;
-        padding: 20px;
-    }
-
-}
-
+/* Handy-Styles */
 @media (max-width: 480px) {
-    .category-list {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .category-item {
-        width: 100%;
-    }
-
-    .category-image {
-        width: 100%;
+    h2 {
+        font-size: 2rem; /* Noch kleinere Schriftgröße für Überschriften */
     }
 
     .game-item {
@@ -683,7 +655,48 @@ h6{
         padding: 10px;
     }
 
+    .navbar ul {
+        flex-direction: column; /* Navigation vertikal ausrichten */
+    }
+
+    .blog-card {
+        width: 100%; /* Volle Breite für Blog-Karten */
+    }
+
+    .category-list {
+        grid-template-columns: repeat(1, 1fr); /* Eine Spalte für Kategorien */
+    }
+
     .banner h1 {
-        font-size: 1.5rem; /* Kleinere Schriftgröße */
+        font-size: 1.5rem; /* Kleinere Schriftgröße für den Banner-Titel */
+    }
+
+    .community h3 {
+        font-size: 1.5rem; /* Kleinere Schriftgröße für Community-Überschriften */
+    }
+
+    .community-header p {
+        font-size: 1.2rem; /* Kleinere Schriftgröße für Community-Text */
+    }
+
+    .register-button {
+        width: 100%; /* Volle Breite für Buttons */
+        margin: 10px 0; /* Abstand zwischen Buttons */
+    }
+
+    .input-group {
+        flex-direction: column; /* Input-Gruppen vertikal ausrichten */
+    }
+
+    .input-group input {
+        width: 100%; /* Volle Breite für Input-Felder */
+    }
+
+    .social-buttons {
+        flex-direction: column; /* Soziale Buttons vertikal ausrichten */
+    }
+
+    .social-button {
+        width: 100%; /* Volle Breite für soziale Buttons */
     }
 }
