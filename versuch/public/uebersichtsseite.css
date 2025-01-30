@@ -643,62 +643,48 @@ h6{
     text-decoration: underline;
 }
 
-/* Media Queries für Responsive Design */
+
 @media (max-width: 768px) {
     .banner h1 {
-        font-size: 2rem; /* Reduzierte Schriftgröße für Tablets */
+        font-size: 1.5rem; /* Schriftgröße für Haupttitel reduzieren */
     }
 
     .banner p {
-        font-size: 1rem; /* Reduzierte Schriftgröße für Tablets */
+        font-size: 0.9rem; /* Schriftgröße für Untertitel reduzieren */
     }
 
     .navbar ul {
-        flex-direction: column; /* Navigation vertikal anordnen */
-        align-items: center;
-        padding: 0; /* Entfernt eventuelle seitliche Abstände */
-    }
-
-    .game-list {
-        flex-direction: column; /* Spieleliste vertikal anordnen */
-        align-items: center;
-        gap: 20px; /* Mäßigere Lücke zwischen den Spielen */
-    }
-
-    .game-item, .blog-card {
-        width: 90%; /* Breiter für kleinere Bildschirme */
-        margin: 10px 0; /* Abstand oben und unten */
-    }
-
-    .category-list {
-        grid-template-columns: repeat(2, 1fr); /* Zwei Spalten statt drei */
-        gap: 20px; /* Begrenzter Abstand */
-    }
-}
-
-@media (max-width: 480px) {
-    .banner h1 {
-        font-size: 1.5rem; /* Weitere Reduzierung der Schriftgröße für Handys */
-    }
-
-    .banner p {
-        font-size: 0.9rem; /* Weitere Reduzierung der Schriftgröße für Handys */
-    }
-
-    .navbar ul {
-        padding: 15px 0; /* Etwas mehr Innenabstand für eine bessere Gestaltung */
+        padding: 15px 0; /* Zusätzlicher Abstand ober- und unterhalb der Navigation */
     }
 
     .navbar li {
-        padding: 10px 0; /* Platzsparender bei Handyversionen */
-        text-align: center;
+        padding: 10px 0; /* Abstand zwischen den Navigationselementen */
+        text-align: center; /* Zentrierte Texte in der Navigation */
     }
 
     .featured, .community {
-        padding: 20px 10px; /* Weniger Polsterung für kompakteres Layout */
+        padding: 20px 10px; /* Weniger Innenabstand, um Platz zu sparen */
+        max-width: 1000px; /* Breitenbegrenzung für den gesamten Bereich */
+        margin: 0 auto; /* Zentriert den Inhalt horizontal */
     }
 
     .category-list {
-        grid-template-columns: 1fr; /* Eine Spalte für Handys */
+        grid-template-columns: 1fr; /* Bei schmalen Bildschirmen eine Spalte */
+        justify-items: center; /* Zentriert die Items innerhalb ihrer Zellen */
+    }
+
+    .blog-container {
+        flex-direction: column; /* Blog-Karten in einer Spalte anordnen */
+        align-items: center; /* Elemente in der Mitte zentrieren */
+    }
+
+    footer {
+        background-color: #24075D; /* Hintergrundfarbe des Footers */
+        border: 2px solid #00FFF7; /* Rahmen des Footers */
+        text-align: center; /* Zentrierter Text */
+        padding: 40px; /* Mehr Polsterung für größeren Footer */
+        color: #FFFFFF; /* Textfarbe im Footer */
+        position: relative; /* Standard-Position, um sicherzustellen, dass der Footer angezeigt wird */
+        width: 100%; /* Volle Breite des Footers */
     }
 }
