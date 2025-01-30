@@ -76,8 +76,9 @@ app.post('/login', async (req, res) => {
 
 // Neue Route für die Impressum-Seite
 app.get('/impressum', (req, res) => {
-    res.render('impressum');
+    res.render('Impressum');
 });
+
 // Neue Route für die Kategorien-Seite
 app.get('/categories', async (req, res) => {
     try {
