@@ -644,53 +644,8 @@ h6{
 }
 
 
-/* Media Queries für Responsive Design */
-@media (max-width: 0px) {
-    .banner h1 {
-        font-size: 2rem; /* Schriftgröße für mittelgroße Bildschirme */
-    }
-
-    .banner p {
-        font-size: 1rem; /* Schriftgröße für mittelgroße Bildschirme */
-    }
-
-    .navbar ul {
-        flex-direction: column; /* Navigation vertikal anordnen */
-        align-items: center;
-    }
-
-    .game-item {
-        width: 100%;
-        height: auto;
-    }
-
-    .blog-card {
-        width: 100%;
-    }
-
-    .category-list {
-        grid-template-columns: repeat(2, 1fr); /* Zwei Spalten für mittelgroße Bildschirme */
-    }
+@media (max-width: 768px) {
 }
 
-@media (max-width: 0px){
-    .banner h1 {
-        font-size: 1.5rem; /* Schriftgröße für kleine Bildschirme */
-    }
-
-    .banner p {
-        font-size: 0.9rem; /* Schriftgröße für kleine Bildschirme */
-    }
-
-    .game-list {
-        flex-direction: column; /* Spielitems vertikal anordnen */
-    }
-
-    .category-list {
-        grid-template-columns: 1fr; /* Eine Spalte für sehr kleine Bildschirme */
-    }
-
-    .category-item {
-        width: 100%; /* Volle Breite für jede Kategorie */
-    }
+@media (max-width: 480px) {
 }
