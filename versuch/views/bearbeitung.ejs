@@ -9,68 +9,67 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- Header mit Home-Button -->
-    <header>
-        <a href="/" class="startseite-icon">
-            <i class="fas fa-home"></i>
-        </a>
-        <h1>Product Details</h1>
-    </header>
+<!-- Header mit Home-Button -->
+<header>
+    <a href="/" class="startseite-icon">
+        <i class="fas fa-home"></i>
+    </a>
+    <h1>Product Details</h1>
+</header>
 
-    <div class="create-product-container">
-        <a href="/Create" class="styled-button">Create Product</a>
-    </div>
-    <form action="/product" method="get">
-        <label for="productId">Product ID:</label>
-        <input type="number" id="productId" name="id" required>
-        <button type="submit" class="styled-button">Search</button>
-    </form>
-    <% if (produkt2) { %>
-        <div class="product-details">
-            <h4>Product Details</h2>
+<div class="create-product-container">
+    <a href="/Create" class="styled-button">Create Product</a>
+</div>
+<form action="/product" method="get">
+    <label for="productId">Product ID:</label>
+    <input type="number" id="productId" name="id" required>
+    <button type="submit" class="styled-button">Search</button>
+</form>
+<% if (produkt2) { %>
+    <div class="product-details">
+        <h4>Product Details</h2>
             <p1>ID: <%= produkt2.id %></p1>
             <p1>Name: <%= produkt2.bezeichnung %></p1>
+            <p1>Kategorie: <%= produkt2.kategorie %></p1>
             <p1>Price: <%= produkt2.preis %></p1>
             <p1>Quantity: <%= produkt2.menge %></p1>
             <p1>Beschreibung: <%= produkt2.beschreibung %></p1>
-            <p1>Kategorie: <%= produkt2.kategorie %></p1>
+    </div>
+    <form action="/product/<%= produkt2.id %>" method="post">
+        <div class="form-group">
+            <label for="bezeichnung">Name:</label>
+            <input type="text" id="bezeichnung" name="bezeichnung" value="<%= produkt2.bezeichnung %>" required>
         </div>
-        <label>Edit Product</label>
-        <form action="/product/<%= produkt2.id %>" method="post">
-            <div class="form-group">
-                <label for="bezeichnung">Name:</label>
-                <input type="text" id="bezeichnung" name="bezeichnung" value="<%= produkt2.bezeichnung %>" required>
-            </div>
-            <div class="form-group">
-                <label for="preis">Price:</label>
-                <input type="number" id="preis" name="preis" value="<%= produkt2.preis %>" required>
-            </div>
-            <div class="form-group">
-                <label>Categories:</label>
-                <input type="text" id="kategorie" name="kategorie" value="<%= produkt2.kategorie %>" required>
-            </div>
-            <div class="form-group">
-                <label for="menge">Quantity:</label>
-                <input type="number" id="menge" name="menge" value="<%= produkt2.menge %>" required>
-            </div>
-            <div class="form-group">
-                <label for="bilder">Bild-URL:</label>
-                <input type="text" id="bilder" name="bilder" value="<%= produkt2.bilder %>" required>
-            </div>
-            <div class="image-preview">
-                <img src="/<%= produkt2.bilder %>" alt="Produktbild" class="image-preview">
-            </div>
-            <div class="form-group">
-                <label>Beschreibung:</label>
-                <input type="text" name="beschreibung" value="<%= produkt2.beschreibung %>">
-            </div>
-            <button type="submit"class="styled-button">Update</button>
-        </form>
-        <form action="/product/<%= produkt2.id %>?_method=DELETE" method="POST" style="margin-top: 10px;">
-            <button type="submit" class="delete-button">Delete</button>
-        </form>
-    <% } else if (typeof produkt2 !== 'undefined') { %>
-        <p>No product found for the given ID.</p>
-    <% } %>
+        <div class="form-group">
+            <label for="preis">Price:</label>
+            <input type="number" id="preis" name="preis" value="<%= produkt2.preis %>" required>
+        </div>
+        <div class="form-group">
+            <label>Categories:</label>
+            <input type="text" id="kategorie" name="kategorie" value="<%= produkt2.kategorie %>" required>
+        </div>
+        <div class="form-group">
+            <label for="menge">Quantity:</label>
+            <input type="number" id="menge" name="menge" value="<%= produkt2.menge %>" required>
+        </div>
+        <div class="form-group">
+            <label for="bilder">Bild-URL:</label>
+            <input type="text" id="bilder" name="bilder" value="<%= produkt2.bilder %>" required>
+        </div>
+        <div class="image-preview">
+            <img src="/<%= produkt2.bilder %>" alt="Produktbild" class="image-preview">
+        </div>
+        <div class="form-group">
+            <label>Beschreibung:</label>
+            <input type="text" name="beschreibung" value="<%= produkt2.beschreibung %>">
+        </div>
+        <button type="submit"class="styled-button">Update</button>
+    </form>
+    <form action="/product/<%= produkt2.id %>?_method=DELETE" method="POST" style="margin-top: 10px;">
+        <button type="submit" class="delete-button">Delete</button>
+    </form>
+<% } else if (typeof produkt2 !== 'undefined') { %>
+    <p>No product found for the given ID.</p>
+<% } %>
 </body>
 </html>

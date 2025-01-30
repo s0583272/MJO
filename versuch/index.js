@@ -20,14 +20,73 @@ app.use(express.static(join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(express.json());
 
+
 // Neue Route für die Üersichtsseite
 app.get('/', (req, res) => {
     res.render('Übersichtsseite');
 });
 
+// Route für Registrierung
+app.post('/register', async (req, res) => {
+    const { email, username, password } = req.body;
+    console.log('Registrierungsdaten:', { email, username, password });
+    if (!email || !username || !password) {
+        return res.status(400).send('Alle Felder sind erforderlich.');
+    }
+    const result = await registerUser(email, username, password);
+    console.log('Registrierungsergebnis:', result);
+    if (result.error) {
+        return res.status(400).send(result.error);
+    }
+    res.status(200).send(result.message);
+});
+// Route zum Bearbeiten einer Kategorie
+app.post('/categories/:id/edit', async (req, res) => {
+    const categoryId = parseInt(req.params.id, 10); // Kategorie-ID aus der URL
+    const { neuerName } = req.body; // Neuer Name aus dem Formular
+
+    // Validierung der Eingabedaten
+    if (isNaN(categoryId) || !neuerName || neuerName.trim() === '') {
+        return res.status(400).send('Ungültige Eingabedaten. Bitte gib einen gültigen Kategorienamen ein.');
+    }
+
+    try {
+        // Aufruf der Backend-Funktion zur Aktualisierung
+        await updateCategoryAndProducts(categoryId, neuerName.trim());
+
+        // Weiterleitung zur Kategorienübersicht
+        res.redirect('/categories');
+    } catch (error) {
+        console.error('Fehler beim Aktualisieren der Kategorie:', error);
+        res.status(500).send('Fehler beim Aktualisieren der Kategorie.');
+    }
+});
+// Route für Login
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+    if (!username || !password) {
+        return res.status(400).send('Benutzername und Passwort sind erforderlich.');
+    }
+    const result = await loginUser(username, password);
+    if (result.error) {
+        return res.status(400).send(result.error);
+    }
+    res.status(200).send(result.message);
+});
+
 // Neue Route für die Impressum-Seite
 app.get('/impressum', (req, res) => {
     res.render('impressum');
+});
+// Neue Route für die Kategorien-Seite
+app.get('/categories', async (req, res) => {
+    try {
+        const kategorienMitAnzahl = await getKategorieMitSpielAnzahl();  // Ruft die Kategorien und die Anzahl der Spiele ab
+        res.render('Category', { kategorien: kategorienMitAnzahl });  // Übergibt die Daten an die Category.ejs
+    } catch (error) {
+        console.error('Fehler beim Laden der Kategorien:', error);
+        res.status(500).send('Fehler beim Laden der Kategorien');
+    }
 });
 
 // Neue Route für die OnlineShop-Seite
@@ -56,15 +115,6 @@ app.get('/onlineshop', async (req, res) => {
 // Neue Route für die Warenkorb-seite
 app.get('/warenkorb', (req, res) => {
     res.render('Warenkorb');
-});
-app.get('/categories', async (req, res) => {
-    try {
-        const kategorien = await getAllKategorien();  // Ruft alle Kategorien aus der DB ab
-        res.render('Category', { kategorien });  // Übergibt die Kategorien an die Category.ejs
-    } catch (error) {
-        console.error('Error loading categories:', error);
-        res.status(500).send('Fehler beim Laden der Kategorien');
-    }
 });
 app.post('/createCategory', async (req, res) => {
     const { kategorieName } = req.body;  // Name der neuen Kategorie aus dem Formular
@@ -229,6 +279,22 @@ app.delete('/product/:id', async (req, res) => {
     }
 });
 
+app.post('/update-category', async (req, res) => {
+    const { oldCategoryName, newCategoryName } = req.body;
+
+    if (!oldCategoryName || !newCategoryName) {
+        return res.status(400).send('Both old and new category names are required.');
+    }
+
+    try {
+        await updateCategoryForProducts(oldCategoryName, newCategoryName);
+        res.redirect('/categories');
+    } catch (error) {
+        console.error('Error updating category:', error);
+        res.status(500).send('Error updating category');
+    }
+});
+
 // Add this at the end of your route definitions
 app.use((req, res, next) => {
     res.status(404).send('404: NOT_FOUND');
@@ -238,3 +304,5 @@ app.use((req, res, next) => {
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
+

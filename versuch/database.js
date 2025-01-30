@@ -138,7 +138,37 @@ export async function createProduct(data) {
         return { error: 'Fehler beim Erstellen des Produkts' };
     }
 }
+export async function updateCategoryAndProducts(categoryId, neuerName) {
+    // Validierung: Neuer Name darf nicht leer sein
+    if (!neuerName || neuerName.trim() === '') {
+        throw new Error('Ungültiger neuer Kategoriename.');
+    }
 
+    try {
+        // Aktualisierung des Kategorienamens in der Tabelle "Kategorien"
+        const queryCategory = `
+            UPDATE Kategorien
+            SET name = ?
+            WHERE id = ?
+        `;
+        await db.execute(queryCategory, [neuerName.trim(), categoryId]);
+
+        // Aktualisierung der Kategorie in der Tabelle "Produkte"
+        const queryProducts = `
+            UPDATE Produkte
+            SET kategorie = ?
+            WHERE kategorie = (
+                SELECT name FROM Kategorien WHERE id = ?
+            )
+        `;
+        await db.execute(queryProducts, [neuerName.trim(), categoryId]);
+
+        console.log(`Kategorie mit ID ${categoryId} erfolgreich aktualisiert.`);
+    } catch (error) {
+        console.error('Fehler beim Aktualisieren der Kategorie:', error);
+        throw error;
+    }
+}
 
 
 export async function updateProduct(id, { bezeichnung, preis, menge, bilder, beschreibung, kategorie }) {
@@ -179,6 +209,22 @@ export async function deleteProduct(productId) {
     } catch (error) {
         console.error("Fehler beim Löschen des Produkts:", error);
         return { error: 'Fehler beim Löschen des Produkts' };
+    }
+}
+// Funktion, um die Anzahl der Produkte pro Kategorie zu erhalten
+export async function getKategorieMitSpielAnzahl() {
+    try {
+        const query = `
+            SELECT kategorie, COUNT(*) as spieleAnzahl
+            FROM Produkte
+            GROUP BY kategorie
+            ORDER BY kategorie ASC
+        `;
+        const result = await db.execute(query);
+        return result.rows; // Gibt die Kategorien mit der Anzahl der Spiele zurück
+    } catch (error) {
+        console.error('Fehler beim Abrufen der Kategorien mit Spieleanzahl:', error);
+        throw error;
     }
 }
 
@@ -237,6 +283,25 @@ export async function addToWarenkorb(produktId, menge) {
     } catch (error) {
         console.error("Fehler beim Hinzufügen des Produkts zum Warenkorb:", error);
         return { error: 'Fehler beim Hinzufügen des Produkts zum Warenkorb' };
+    }
+}
+
+export async function updateCategoryForProducts(oldCategoryName, newCategoryName) {
+    if (!oldCategoryName || !newCategoryName) {
+        throw new Error('Both old and new category names are required.');
+    }
+
+    try {
+        const query = `
+            UPDATE Produkte
+            SET kategorie = ?
+            WHERE kategorie = ?
+        `;
+        await db.execute(query, [newCategoryName, oldCategoryName]);
+        console.log(`Kategorie von ${oldCategoryName} zu ${newCategoryName} erfolgreich aktualisiert.`);
+    } catch (error) {
+        console.error('Fehler beim Aktualisieren der Kategorie:', error);
+        throw error;
     }
 }
 

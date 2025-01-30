@@ -1,102 +1,106 @@
 /* File: public/test2.css */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* General styles for the body */
+/* Allgemeine Stile */
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Press Start 2P', sans-serif; /* Setzt die Retro-Schriftart */
-    color: #f0f0f0; /* Gelber Text für gute Lesbarkeit */
+    color: black; /* Gelber Text für gute Lesbarkeit */
     background-image: url('hintergrund.webp'); /* Hintergrundbild für das Seiten-Design */
+    line-height: 1.6;
     background-size: cover; /* Hintergrundbild füllt die Seite */
     background-repeat: no-repeat; /* Bild wiederholt sich nicht */
     background-position: center; /* Bild zentriert */
     height: 100%; /* Bildhöhe deckt den gesamten Bildschirm */
 }
-.image-preview img {
-    max-width: 200px; /* Passe die Größe nach Bedarf an */
-    max-height: 200px; /* Optionale Begrenzung der Höhe */
-    width: auto; /* Hält das Seitenverhältnis */
-    height: auto; /* Hält das Seitenverhältnis */
-    display: revert; /* Optional, um sicherzustellen, dass es richtig angezeigt wird */
-    margin: auto; /* Zentriert das Bild im Container */
+
+header {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #24075D; /* Dark blue background */
+    border: 2px solid #00FFF7; /* Neon turquoise border */
+    color: #FFFFFF; /* White text for contrast */
 }
 
-.description-container {
-    margin-top: 20px;
-    font-size: 16px;
-    line-height: 1.5;
+header h1 {
+    align-items: center;
+    margin: 0;
+    font-size: 1.5rem;
 }
 
-.description-container input {
+header .startseite-icon {
+    margin-right: 20px;
+    color: #f0f0f0;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+/* Formular-Stile */
+form {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+form input, form button {
     width: 100%;
-    height: 50px;
-    font-size: 16px;
     padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    white-space: nowrap; /* Erzwingt eine einzelne Zeile */
-    overflow: hidden; /* Schneidet überflüssigen Text ab */
-    text-overflow: ellipsis; /* Zeigt '...' für abgeschnittenen Text an */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
 }
 
-/* Styles for all headings */
-h4, h5, h6 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Specific styles for h1 */
-h1 {
-    border-radius: 10px; /* Abgerundete Ecken */
-    background-color: #24075D; /* Dunkler Blauton für Boxen */
-    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
-    color: #FFFFFF; /* Weißer Text für Kontrast */
-    text-align: center; /* Zentriert den Text */
-    padding: 40px 20px; /* Abstand für einen großzügigen Look */
-    -webkit-text-stroke: 1px white; /* rand Farbe der schrift*/
-}
-h2 {
-    text-align: center;
-    border-radius: 10px; /* Abgerundete Ecken */
-    padding: 10px; /* Reduziertes Padding für besseren Textumfluss */
-    background-color: #24075D; /* Dunkler Blauton für Boxen */
-    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
-    color: #FFFFFF; /* Weißer Text für Kontrast */
-    display: inline-block; /* Nur Textumfang */
+form button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
     font-weight: bold;
-}
-/* Specific styles for h2 */
-h4 {
-    font-size: 2em;
-    margin-top: 20px;
-    font-family: 'Press Start 2P', sans-serif;
+    transition: background-color 0.3s ease;
 }
 
-h3 {
-    border-radius: 10px; /* Abgerundete Ecken */
-    padding: 20px; /* Abstand für einen großzügigen Look */
-    background-color: #24075D; /* Dunkler Blauton für Boxen */
-    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
-    color: #FFFFFF; /* Weißer Text für Kontrast */
-    display: block;
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Produktdetails */
+.product-details {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+}
+
+.product-details h4 {
+    font-size: 1.3rem;
     margin-bottom: 10px;
-    font-weight: bold;
-    width: 220px; /* Breite der Spiel-Container */
-    height: 20px; /* Höhe der Spiel-Container */
+    border-bottom: 2px solid #007BFF;
+    display: inline-block;
 }
-/* Styles for form labels */
-label {
-    border-radius: 10px; /* Abgerundete Ecken */
-    padding: 20px; /* Abstand für einen großzügigen Look */
-    background-color: #24075D; /* Dunkler Blauton für Boxen */
-    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
-    color: #FFFFFF; /* Weißer Text für Kontrast */
+
+.product-details p1 {
     display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    width: 220px; /* Breite der Spiel-Container */
-    height: 20px; /* Höhe der Spiel-Container */
+    margin: 5px 0;
+    font-size: 1rem;
 }
+
 .styled-button {
     display: inline-block;
     background-color: #24075D; /* Dark blue background */
@@ -113,165 +117,79 @@ label {
     background-color: #00FFF7; /* Change background color on hover */
     color: #24075D; /* Change text color on hover */
 }
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-th, td {
-    background-color: #24075D; /* Dunkler Blauton für Boxen */
-    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
-    color: #FFFFFF; /* Weißer Text für Kontrast */
-    padding: 8px;
-    text-align: left;
-}
-th {
-    background-color: #24075D; /* Dunkler Blauton für Boxen */
-    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
-    color: #FFFFFF; /* Weißer Text für Kontrast */
-}
-/* Styles for form inputs */
-input[type="number"] {
-    width: 100%;
+
+.delete-button {
+    background-color: #DC3545;
+    color: #fff;
+    border: none;
     padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    height: 20px; /* Höhe der Spiel-Container */
-}
-.create-product-container {
-    text-align: center;
-    margin: 20px 0;
-}
-header {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #24075D; /* Dark blue background */
-    border: 2px solid #00FFF7; /* Neon turquoise border */
-    color: #FFFFFF; /* White text for contrast */
-}
-
-header .startseite-icon {
-    margin-right: 20px;
-    color: #f0f0f0;
-    font-size: 1.5rem;
-    text-decoration: none;
-}
-
-header .startseite-icon:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.8rem;
-    color: #f0f0f0;
-}
-.create-product-btn {
-    display: inline-block;
-    background-color: #24075D; /* Dark blue background */
-    border: 2px solid #00FFF7; /* Neon turquoise border */
-    color: #FFFFFF; /* White text for contrast */
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
-.create-product-btn:hover {
-    background-color: #24075D; /* Dunkler Blauton für Boxen */
-    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
-    color: #FFFFFF; /* Weißer Text für Kontrast */
-}
-/* Styles for form inputs */
-input[type="text"],
-input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 220px; /* Width of the container */
-    height: 20px; /* Height of the container */
-}
-/* Styles for buttons */
-button {
-    background-color: #24075D; /* Dark blue background */
-    border: 2px solid #00FFF7; /* Neon turquoise border */
-    color: #FFFFFF; /* White text for contrast */
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px; /* Add some margin to the top of the button */
+.delete-button:hover {
+    background-color: #a71d2a;
 }
 
-button:hover {
-    background-color: #24075D; /* Dunkler Blauton für Boxen */
-    border: 2px solid #00FFF7; /* Neon-Türkis für Rahmen */
-    color: #FFFFFF; /* Weißer Text für Kontrast */
-}
-
-
-
-p {
-    background-color: #24075D; /* Dark blue background */
-    border: 2px solid #00FFF7; /* Neon turquoise border */
-    color: #FFFFFF; /* White text for contrast */
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
+/* Bildvorschau */
+.image-preview {
     display: block;
-    margin: 5px 0;
-}
-/* Styles for form labels and inputs to be side by side */
-.form-group {
-    display: flex;
-    align-items: center;
-    width: 100px; /* Breite der Spiel-Container */
-    height: 100px; /* Höhe der Spiel-Container *
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.form-group label {
-    margin-right: 10px;
-    width: auto; /* Adjust width as needed */
+/* Create-Product Container */
+.create-product-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.create-product-container .styled-button {
+    font-size: 1.2rem;
+}
+
+/* Formgruppen für Eingaben */
+.form-group {
+    margin-bottom: 15px;
 }
 
 .form-group input {
-    flex: 1;
-    margin: 0; /* Remove default margin */
-    padding: 15px; /* Adjust padding as needed */
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-
-/* Custom styles for the product details div */
-.product-details {
-    background-color: #f0f0f0; /* Light grey background */
-    padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    margin-bottom: 20px;
-}
-
-.product-details h2 {
-    color: #24075D; /* Dark blue color for the heading */
-    margin-bottom: 10px;
-}
-
-.product-details p1 {
-    display: block;
-    color: #333; /* Dark text color */
-    margin: 5px 0;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        padding: 10px;
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    form, .product-details {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .styled-button {
+        font-size: 0.9rem;
+    }
+
+    .delete-button {
+        font-size: 0.9rem;
     }
 }
-
-@media (max-width: 480px) {
-    .container {
-        padding: 5px;
-    }
+p{
+    background-color: #24075D; /* Dark blue background */
+    border: 2px solid #00FFF7; /* Neon turquoise border */
+    color: #FFFFFF; /* White text for contrast */
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin: 5px 0;
 }
