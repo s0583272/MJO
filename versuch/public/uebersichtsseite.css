@@ -643,4 +643,23 @@ h6{
     text-decoration: underline;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    form, .product-details {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .styled-button {
+        font-size: 0.9rem;
+    }
+
+    .delete-button {
+        font-size: 0.9rem;
+    }
+}
 
