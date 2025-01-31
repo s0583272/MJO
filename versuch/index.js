@@ -71,7 +71,7 @@ app.post('/login', async (req, res) => {
     if (result.error) {
         return res.status(400).send(result.error);
     }
-    res.status(200).send(result.message);
+    res.redirect('/');
 });
 
 // Neue Route für die Impressum-Seite
